@@ -1,0 +1,169 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#main-section {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("img/pexels-christina-morillo-1181298.jpg");
+    background-size: cover;
+    background-origin: center;
+    overflow: hidden;
+}
+
+#background-opacity {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    top: 80px;
+    z-index: 1;
+    background-color: rgba(24, 30, 0, 0.73);
+    position: absolute;
+}
+
+.website-title {
+    position: absolute;
+    z-index: 1;
+    color: aliceblue;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 25vh;
+    font-size: calc(3vw + 20px);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#icons {
+    z-index: 2;
+}
+
+#dwn-cv,
+#contact-me {
+    z-index: 1;
+    position: absolute;
+    top: 66%;
+    left: 25%;
+    color: antiquewhite;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 15px;
+
+    -webkit-box-shadow: 1px 5px 21px 13px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 1px 5px 21px 13px rgba(0, 0, 0, 0.68);
+    box-shadow: 1px 5px 21px 13px rgba(0, 0, 0, 0.68);
+    background-color: rgba(255, 255, 255, 0.76);
+    color: black;
+    transition: 0.5s;
+}
+
+#dwn-cv:hover,
+#contact-me:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#icons {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: calc(50% - 200px);
+    right: auto;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.main-icons {
+    padding: 20px;
+    font-size: 40px;
+    transition: 0.5s;
+}
+
+.main-icons:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    color: #F4C95D;
+}
+
+#dwn-cv {
+    left: 60%;
+    border: 2px solid yellow;
+}
+
+#contact-me {
+    left: 20%;
+    border: 2px solid yellow;
+}
+
+.write-effect {
+    background-color: #E7E393;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-name: startAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+    margin: 1px;
+}
+
+#write-title {
+    animation-delay: 1s;
+}
+
+#write-icons {
+    animation-delay: 2s;
+}
+
+#write-contact {
+    animation-delay: 1.5s;
+}
+
+#write-cv {
+    animation-delay: 1.5s;
+}
+
+@keyframes startAnimation {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    nav{
+        padding:0;
+        width: 100vw;
+        left: 0;
+    }
+    
+    .menu-wrap{
+        width: 100vw;
+        margin: 0;
+        padding:0;
+        left: 0;
+    }
+    
+    .website-title{
+        font-size: 1.5rem;    
+    }
+    
+    #icons{
+        margin-left: 20px;
+    }
+    
+    #dwn-cv {
+        top: 75%;
+        left: 20%;
+    }
+    
+    #contact-me{
+      top:  60%; 
+    }
+}

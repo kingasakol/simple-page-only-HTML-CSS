@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Verdana", sans-serif;
+}
+
+nav {
+    height: 80px;
+    background: #D8DDEF;
+    padding: 0 20px;
+    color: white;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+}
+
+.logo {
+    line-height: 80px;
+    float: left;
+    color: #191933;
+    text-transform: uppercase;
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.menu > .menu-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    top: 20px;
+    padding: 20px;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+a {
+    color: gray;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 10px;
+    margin: auto;
+}
+
+a:hover {
+    color: black;
+}
+
+.menu-item:hover {
+    color: burlywood;
+    border: 3px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-box-shadow: inset 2px 0px 5px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 2px 0px 5px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 2px 0px 5px 6px rgba(0, 0, 0, 0.75);
+}
+
+.menu:hover ~ a {
+    color: burlywood;
+}
+
+.menu-wrap .menu {
+    top: 0;
+    width: 100%;
+    height: 80px;
+    visibility: visible;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #D8DDEF;
+    opacity: 0.8;
+}
+
+.menu:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .menu-wrap .hamburger {
+        visibility: visible;
+    }
+
+    .menu-wrap {
+        height: 50px;
+    }
+
+    .menu-wrap .menu {
+        visibility: hidden;
+        height: auto;
+        flex-direction: column;
+        font-size: 21px;
+        display: flex;
+        position: relative;
+        transition: 1s;
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        color: black;
+    }
+
+    .menu-wrap .hamburger > div {
+        position: relative;
+        flex: none;
+        width: 100%;
+        height: 2px;
+        background: #191933;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .menu-wrap .hamburger > div::before,
+    .menu-wrap .hamburger > div::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+
+    .menu-wrap .hamburger > div::after {
+        top: 10px;
+    }
+
+    .menu-wrap .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+
+    .menu-wrap .toggler:checked + .hamburger > div:before,
+    .menu-wrap .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .menu-wrap .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+
+    .menu-wrap .toggler:checked ~ .menu {
+        visibility: visible;
+    }
+
+    .menu-wrap .toggler:checked ~ .menu > div {
+        transform: scale(1);
+        transition-duration: 0.75s;
+    }
+
+    .menu-wrap .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transition: opacity 0.4s ease 0.4s;
+    }
+
+    .menu > .menu-item {
+        top: 0;
+        right: -100vw;
+        background-color: #566573;
+        opacity: 0.8;
+        width: 100vw;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+    }
+
+    .menu-item:hover {
+        opacity: 1;
+    }
+
+    .menu-item:hover ~ a {
+        font-weight: bold;
+    }
+
+    .menu-wrap .toggler:checked ~ .menu > #first-menu-item {
+        transition: 0.4s;
+        transition-delay: 0.2s;
+    }
+
+    input:checked ~ .menu > #first-menu-item {
+        right: 0;
+        transition: 0.4s;
+        transition-delay: 0.2s;
+    }
+
+    input:checked ~ .menu > #second-menu-item {
+        right: 0;
+        transition: 0.4s;
+        transition-delay: 0.4s;
+    }
+
+    input:checked ~ .menu > #third-menu-item {
+        right: 0;
+        transition: 0.4s;
+        transition-delay: 0.6s;
+    }
+
+    input:checked ~ .menu > #fourth-menu-item {
+        right: 0;
+        transition: 0.4s;
+        transition-delay: 0.8s;
+    }
+
+    input:checked ~ .menu > #fifth-menu-item {
+        right: 0;
+        transition: 0.4s;
+        transition-delay: 1s;
+    }
+
+    input ~ .menu > #first-menu-item {
+        transition: 0.4s;
+        transition-delay: 0.2s;
+    }
+
+    input ~ .menu > #second-menu-item {
+        transition: 0.4s;
+        transition-delay: 0.4s;
+    }
+
+    input ~ .menu > #third-menu-item {
+        transition: 0.4s;
+        transition-delay: 0.6s;
+    }
+
+    input ~ .menu > #fourth-menu-item {
+        transition: 0.4s;
+        transition-delay: 0.8s;
+    }
+
+    input ~ .menu > #fifth-menu-item {
+        transition: 0.4s;
+        transition-delay: 1s;
+    }
+
+    #up-button {
+        position: fixed;
+        left: 0;
+        bottom: 10%;
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        font-size: 20px;
+        rgba(255, 255, 255, 0.76);
+    }
+}
+
+/*up-button style*/
+
+#up-button {
+    position: fixed;
+    left: 0;
+    bottom: 10%;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+    rgba(255, 255, 255, 0.76);
+}
+
+#up-button:hover {
+    cursor: pointer;
+    font-size: bold;
+    border: 2px solid darkred;
+}
